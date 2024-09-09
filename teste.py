@@ -4,13 +4,22 @@ palavra = str(listaPalavras.pop())
 
 respostas = ["#","#","#","#","#"]
 
-tentativa = 1
+tentativa = 6
 
 while True:
-    if tentativa > 6:
+
+    if tentativa < 1:
         break
 
-    palavraChutada = input("Qual a palavra?")
+    if tentativa != 6:
+        print(f"Você ainda tem {tentativa} tentativas")
+
+    palavraChutada = input("Qual a palavra?\n")
+
+    if len(palavraChutada) != 5 :
+        
+        print("Palavra com tamanho errado, tente novamente!")
+        continue
 
     palavraChutadaLista = list(palavraChutada)
 
@@ -32,4 +41,4 @@ while True:
 
     print(f'{respostas[0]} {respostas[1]} {respostas[2]} {respostas[3]} {respostas[4]}')
 
-    tentativa += 1
+    tentativa -= 1
